@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public Rigidbody2D  body;
+    public Rigidbody2D body;
     public int speed = 5;
     public int sprintMultiplier = 2;
+    public SpriteRenderer spriteRenderer;
 
     void Update()
     {
@@ -25,5 +26,16 @@ public class Movement : MonoBehaviour
 
         // Appliquer le mouvement au Rigidbody du joueur
         body.velocity = movement * currentSpeed;
+
+        // Modifier flipX du spriteRenderer en fonction de la direction du mouvement horizontal
+        if (horizontalInput > 0)
+        {
+            spriteRenderer.flipX = false; // Déplacement vers la droite, pas de flip
+        }
+        else if (horizontalInput < 0)
+        {
+            spriteRenderer.flipX = true; // Déplacement vers la gauche, flip le sprite
+        }
+        // Note : Pas de changement si horizontalInput est 0 pour éviter de flipper le sprite quand le joueur s'arrête
     }
 }

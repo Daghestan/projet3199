@@ -4,57 +4,115 @@ using UnityEngine;
 
 public class Pathfinding : MonoBehaviour
 {
-    // Ce script 
     private Transform target;
-    [SerializeField] Transform rayOrigin; // ceci est un transform défini depuis l'éditeur lorsque l'on importe ce code dans un NPC.
-    UnityEngine.AI.NavMeshAgent agent;
+    [SerializeField] private Transform rayOrigin;
+    private UnityEngine.AI.NavMeshAgent agent;
 
-    public string targetTag = "Player";
+    private string targetTag = "Player";
+    public SpriteRenderer spriteRenderer;
     private bool canChase = false;
-    public int rayDistance = 100;
-    public float rayOrigineDist = 0.02999999f;
+    
+    public int rayDistance = 20;
+    public int angle = 45; // Angle total de vision
+    public int numberOfRays = 5; // Nombre de raycasts à envoyer
     private float timeSinceAcquiredTarget = 0f;
-    public float timeToLoseTarget = 5f; // Temps en secondes avant de perdre la cible
+    public float timeToLoseTarget = 5f;
+    private bool lookLeft = false;
+
+    private Vector3 lastPosition; // Pour stocker la dernière position et comparer le mouvement
+    public float wanderRadius = 10f; // Rayon pour le déplacement aléatoire
 
     void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        lastPosition = transform.position;
     }
 
     void Update()
     {
-        // Utiliser un raycast 2D pour détecter le joueur
-        RaycastHit2D hit = Physics2D.Raycast(rayOrigin.position, rayOrigin.right, rayDistance);
-
-        // Vérifier si le raycast a touché un objet avec le tag du joueur
-        if (hit.collider != null && hit.collider.CompareTag(targetTag))
+       
+        
+        if (spriteRenderer != null)
         {
-            // Redéfinir la cible sur le joueur
-            target = hit.transform;
-            canChase = true;
-            timeSinceAcquiredTarget = 0f; // Réinitialiser le temps
+            spriteRenderer.flipX = lookLeft;
+            
         }
-        else
+        
+       float startAngle = Mathf.Lerp(angle / 2, -angle / 2, 0);
+       float endAngle = Mathf.Lerp(angle / 2, -angle / 2, 1);
+       float angleStep = (endAngle - startAngle) / (numberOfRays - 1);
+       bool targetFound = false;
+        for (int i = 0; i < numberOfRays; i++)
         {
-            // Aucun joueur détecté, augmenter le temps
-            timeSinceAcquiredTarget += Time.deltaTime; // delta time est plus ou moins le temp d'une frame (entre 1/180 et 1/12 selon les jeux)
+            float currentAngle = startAngle + (angleStep * i);
+                    // Convertir l'angle en direction en prenant en compte la rotation de rayOrigin
+                    Vector2 direction =  lookLeft ?Quaternion.Euler(0, 0, currentAngle) * rayOrigin.right * -1: Quaternion.Euler(0, 0, currentAngle) * rayOrigin.right * 1;
+                    
+                    RaycastHit2D hit = Physics2D.Raycast(rayOrigin.position, direction, rayDistance);
+                    Debug.DrawRay(rayOrigin.position, direction * rayDistance, Color.red);
+            
+             if (hit.collider != null && hit.collider.CompareTag(targetTag))
+                    {
+                        target = hit.transform;
+                        canChase = true;
+                        timeSinceAcquiredTarget = 0f; // Réinitialiser le temps
+                        targetFound = true;
+                        break;
+                    }
+        }
+        
 
-            // Si le temps dépasse la limite, désactiver la poursuite
+        if (targetFound == false)
+        {
+            timeSinceAcquiredTarget += Time.deltaTime;
+
             if (timeSinceAcquiredTarget >= timeToLoseTarget)
             {
                 canChase = false;
+                WanderRandomly(); // Appeler la fonction de déplacement aléatoire
             }
         }
+
+        UpdateLookDirection();
     }
 
-    void FixedUpdate()
+    
+
+    private void WanderRandomly()
     {
-        // Mettre à jour la destination si la poursuite est activée
-        if (canChase)
-        {
-            agent.SetDestination(target.position);
-        }
+        Vector3 randomDirection = Random.insideUnitSphere * wanderRadius;
+        randomDirection += transform.position;
+        UnityEngine.AI.NavMeshHit navHit;
+        UnityEngine.AI.NavMesh.SamplePosition(randomDirection, out navHit, wanderRadius, -1);
+        agent.SetDestination(navHit.position);
     }
+
+    private void UpdateLookDirection()
+    {
+        // Comparer la position actuelle avec la dernière position pour déterminer la direction
+        if (transform.position.x < lastPosition.x)
+        {
+            lookLeft = true;
+        }
+        else if (transform.position.x > lastPosition.x)
+        {
+            lookLeft = false;
+        }
+        // Mettre à jour la dernière position pour la prochaine comparaison
+        lastPosition = transform.position;
+    }
+    
+    void FixedUpdate()
+        {
+            if (canChase && target != null)
+            {
+                agent.SetDestination(target.position);
+            }
+            else 
+            {
+                WanderRandomly();
+            }
+        }
 }
