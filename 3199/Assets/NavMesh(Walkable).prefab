@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 3777929831761380996}
   - component: {fileID: 5151959611564587337}
   - component: {fileID: 3132417207740530199}
+  - component: {fileID: 6346883401545510434}
   m_Layer: 0
-  m_Name: NavMesh
+  m_Name: NavMesh(Walkable)
   m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,3 +79,15 @@ MonoBehaviour:
   m_UseMeshPrefab: {fileID: 0}
   m_CompressBounds: 0
   m_OverrideVector: {x: 1, y: 1, z: 1}
+--- !u!114 &6346883401545510434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856978305943132543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9deb477d137dd0e4bacede1ae449fbbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

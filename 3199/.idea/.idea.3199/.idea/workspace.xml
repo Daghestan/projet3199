@@ -6,53 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="2a6d69f2-7197-4b24-9256-a8a6afe13c73" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.3199/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3199/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AIModel.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AIModel/Enemy.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AIModel/Enemy.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AIModel/Robot.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AIModel/Robot.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AiScript.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AiScript/AgentMovement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AiScript/AgentMovement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AiScript/AiChase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AiScript/AiChase.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AiScript/Animate.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AiScript/Animate.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AiScript/Pathfinding.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AiScript/Pathfinding.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AiScript/PathfindingBaseScript.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AiScript/PathfindingBaseScript.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerModels.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerModels/Player.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerModels/Player.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerModels/PlayerHUI.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerModels/PlayerHUI.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerScript.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerScript/.idea/.idea.C# script.dir/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerScript/.idea/.idea.C# script.dir/.idea/projectSettingsUpdater.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerScript/.idea/.idea.C# script.dir/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerScript/Movement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerScript/Movement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerScript/ToolInterface.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PlayerScript/ToolInterface.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralGeneration.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ProceduralGeneration.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ProceduralGeneration.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ProceduralGeneration.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh-NavMesh 1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh-NavMesh 1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh-NavMesh.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh-NavMesh.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh-Soldier 1.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh-Soldier 1.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh-Soldier 2.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh-Soldier 2.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh-Soldier.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/NavMesh-Soldier.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NavMesh.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/NavMesh.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scene/BaseScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/BaseScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +19,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Player/Movement.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Player/Movement.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -143,6 +99,9 @@
       <workItem from="1708624244640" duration="3950000" />
       <workItem from="1708631800624" duration="4394000" />
       <workItem from="1709021910799" duration="217000" />
+      <workItem from="1710609130315" duration="2735000" />
+      <workItem from="1710680499247" duration="1453000" />
+      <workItem from="1710684479066" duration="2076000" />
     </task>
     <servers />
   </component>
