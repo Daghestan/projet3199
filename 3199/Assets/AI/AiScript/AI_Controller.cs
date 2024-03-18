@@ -8,7 +8,7 @@ public class AI_Controller : MonoBehaviour, HumanoidInterface
     [SerializeField] private Transform rayOrigin;
     private UnityEngine.AI.NavMeshAgent agent;
     
-    public float MaxHealth = 100f:
+    public static float MaxHealth = 100f;
     public float health { get; set; } = MaxHealth;
 
     private string targetTag = "Player";

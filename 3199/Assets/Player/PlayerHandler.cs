@@ -9,10 +9,8 @@ public class PlayerHandler : MonoBehaviour, HumanoidInterface
     public int sprintMultiplier = 2;
     public SpriteRenderer spriteRenderer;
 
-    public float MaxHealth = 100f:
+    public static float MaxHealth = 100f;
     public float health { get; set; } = MaxHealth;
-
-   
     public void Died()
     {
         speed = 0;
