@@ -9,7 +9,8 @@ public class PlayerHandler : MonoBehaviour, HumanoidInterface
     public int sprintMultiplier = 2;
     public SpriteRenderer spriteRenderer;
 
-    public float health { get; set; } = 100;
+    public float MaxHealth = 100f:
+    public float health { get; set; } = MaxHealth;
 
    
     public void Died()
