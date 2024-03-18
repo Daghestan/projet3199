@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pathfinding : MonoBehaviour
+public class AI_Controller : MonoBehaviour, HumanoidInterface
 {
     private Transform target;
     [SerializeField] private Transform rayOrigin;
     private UnityEngine.AI.NavMeshAgent agent;
+    
+    public float health { get; set; } = 100;
 
     private string targetTag = "Player";
     public SpriteRenderer spriteRenderer;
@@ -21,7 +23,24 @@ public class Pathfinding : MonoBehaviour
 
     private Vector3 lastPosition; // Pour stocker la dernière position et comparer le mouvement
     public float wanderRadius = 10f; // Rayon pour le déplacement aléatoire
+    
 
+    
+    public void Died()
+    {
+        canChase = false;
+        wanderRadius = 0;
+    }
+    
+    public void takedamage (int damages)
+    {
+        health -= damages;
+        if (health <= 0)
+        {
+            health = 0;
+            Died();
+        }
+    }
     void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();

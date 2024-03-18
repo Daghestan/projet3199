@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a6d69f2-7197-4b24-9256-a8a6afe13c73" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.3199/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3199/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NavMesh.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/NavMesh.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scene/BaseScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/BaseScene.unity" afterDir="false" />
-    </list>
+    <list default="true" id="2a6d69f2-7197-4b24-9256-a8a6afe13c73" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,7 +96,7 @@
       <workItem from="1709021910799" duration="217000" />
       <workItem from="1710609130315" duration="2735000" />
       <workItem from="1710680499247" duration="1453000" />
-      <workItem from="1710684479066" duration="2076000" />
+      <workItem from="1710684479066" duration="2084000" />
     </task>
     <servers />
   </component>

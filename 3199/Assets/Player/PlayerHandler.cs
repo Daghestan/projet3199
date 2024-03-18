@@ -2,13 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class PlayerHandler : MonoBehaviour, HumanoidInterface
 {
     public Rigidbody2D body;
     public int speed = 5;
     public int sprintMultiplier = 2;
     public SpriteRenderer spriteRenderer;
 
+    public float health { get; set; } = 100;
+
+   
+    public void Died()
+    {
+        speed = 0;
+    }
+    
+    public void takedamage (int damages)
+    {
+        health -= damages;
+        if (health <= 0)
+        {
+            health = 0;
+            Died();
+        }
+    }
     void Update()
     {
         // Obtenir les entrées de déplacement
