@@ -1944,6 +1944,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.4416
       objectReference: {fileID: 0}
+    - target: {fileID: 4109266048104122435, guid: 94be088747f3e9549b35fbd79613bef8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8603728823200361726, guid: 94be088747f3e9549b35fbd79613bef8, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8630666972270072340, guid: 94be088747f3e9549b35fbd79613bef8, type: 3}
       propertyPath: m_Layer
       value: 3
