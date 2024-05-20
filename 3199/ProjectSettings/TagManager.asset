@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - AI
+  - Collision
   layers:
   - Default
   - TransparentFX
