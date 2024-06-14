@@ -9,6 +9,36 @@ EditorBuildSettings:
     path: Assets/Scene/MENU.unity
     guid: c3d82d3564960c44c9f7a7fd47788e96
   - enabled: 1
+    path: Assets/Scene/EXPLIJEU.unity
+    guid: 24bae1353d88b424cbdf3c3d12dd5134
+  - enabled: 1
+    path: Assets/Scene/minigame/quete.unity
+    guid: 977ee1117d2ad2641b4c10ba72701cb9
+  - enabled: 1
+    path: Assets/Scene/minigame/expliQuete.unity
+    guid: 5e7229c54c1a2f746a75c109b35fc243
+  - enabled: 1
+    path: Assets/Scene/minigame/memorygame.unity
+    guid: fd524bf56d7a7a542990ea9ee1586119
+  - enabled: 1
+    path: Assets/Scene/minigame/congrat.unity
+    guid: ecb4bca905789f34a91be16f4345924a
+  - enabled: 1
+    path: Assets/Scene/minigame/explibretagne.unity
+    guid: cf4643077f2aa7b4a87f2d8901dc42ee
+  - enabled: 1
+    path: Assets/Scene/minigame/explimaroc.unity
+    guid: 91ac286c83202044ca177d4afa1940f6
+  - enabled: 1
+    path: Assets/Scene/minigame/expliouzb.unity
+    guid: 24927c756d9d18c4799a4ec2306e7804
+  - enabled: 1
+    path: Assets/Scene/minigame/explitiki.unity
+    guid: 6602f6fc044995e4d92b1382a9e52419
+  - enabled: 1
+    path: Assets/Scene/minigame/EndMem.unity
+    guid: 4c594414ebc73ad44abd20b418ebbbf2
+  - enabled: 1
     path: Assets/Scene/BaseScene.unity
     guid: 4f6b12d8110bad14285b7f630ff4302d
   - enabled: 1

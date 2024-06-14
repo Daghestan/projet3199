@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class control : MonoBehaviour
 {
-
     public const int gridRows = 2;
     public const int gridCols = 4;
     public const float offsetX = 4f;
@@ -16,16 +15,16 @@ public class control : MonoBehaviour
 
     private void Start()
     {
-        Vector3 startPos = originalCard.transform.position; //The position of the first card. All other cards are offset from here.
+        Vector3 startPos = originalCard.transform.position;
 
         int[] numbers = { 0, 0, 1, 1, 2, 2, 3, 3 };
-        numbers = ShuffleArray(numbers); //This is a function we will create in a minute!
+        numbers = ShuffleArray(numbers);
 
         for (int i = 0; i < gridCols; i++)
         {
             for (int j = 0; j < gridRows; j++)
             {
-               main card;
+                main card;
                 if (i == 0 && j == 0)
                 {
                     card = originalCard;
@@ -65,7 +64,14 @@ public class control : MonoBehaviour
     private main _secondRevealed;
 
     private int _score = 0;
+    private int _pairsFound = 0;
+    private int _totalPairs;
     [SerializeField] private TextMesh scoreLabel;
+
+    private void Awake()
+    {
+        _totalPairs = gridRows * gridCols / 2;
+    }
 
     public bool canReveal
     {
@@ -90,7 +96,14 @@ public class control : MonoBehaviour
         if (_firstRevealed.id == _secondRevealed.id)
         {
             _score++;
+            _pairsFound++;
             scoreLabel.text = "Score: " + _score;
+
+            if (_pairsFound == _totalPairs)
+            {
+                yield return new WaitForSeconds(1.0f);
+                SceneManager.LoadScene("congrat"); 
+            }
         }
         else
         {
@@ -102,12 +115,10 @@ public class control : MonoBehaviour
 
         _firstRevealed = null;
         _secondRevealed = null;
-
     }
 
     public void Restart()
     {
         SceneManager.LoadScene("Scene_001");
     }
-
 }

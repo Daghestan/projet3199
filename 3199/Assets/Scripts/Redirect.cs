@@ -7,7 +7,7 @@ public class Redirect : MonoBehaviour
 {
    public void Play()
     {
-        SceneManager.LoadScene("BaseScene");
+        SceneManager.LoadScene("EXPLIJEU");
     }
 
     public void PlayMulti()
