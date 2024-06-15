@@ -44,6 +44,8 @@ public class PlayerHandler : MonoBehaviour, HumanoidInterface
         {
             health = 0;
             Died();
+            SceneManager.LoadScene ("Menu");
+
         }
         else 
                 {

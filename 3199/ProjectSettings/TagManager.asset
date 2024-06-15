@@ -6,6 +6,8 @@ TagManager:
   tags:
   - AI
   - Collision
+  - Exit
+  - Floor
   layers:
   - Default
   - TransparentFX
@@ -42,4 +44,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 3238892065
+    locked: 0
+  - name: Item
+    uniqueID: 2278020673
     locked: 0

@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using Completed; //Allows us to use Lists. 
+using Completed; 
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -27,11 +28,14 @@ public class GameManager : MonoBehaviour
         InitGame();
     }
 
+
     private void OnLevelWasLoaded (int index)
     {
-        level++;
+        level++; 
 
+        
         InitGame();
+
     }
 
     void InitGame()

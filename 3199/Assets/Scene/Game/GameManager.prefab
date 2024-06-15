@@ -52,8 +52,8 @@ MonoBehaviour:
   exit: {fileID: 6304203615145671138, guid: 4450ace90fe886e42a9c74af1a16c502, type: 3}
   enemy:
   - {fileID: 5076590502907468627, guid: 7229973347b6eda4a8f807d6ef6c1178, type: 3}
-  - {fileID: 5965918630125379287, guid: 6d50bb206ab0b694bbe36b176d19275e, type: 3}
-  - {fileID: 5965918630125379287, guid: 6d50bb206ab0b694bbe36b176d19275e, type: 3}
+  - {fileID: 1267302984721423346, guid: 932e671dea252f54693c70701112b390, type: 3}
+  - {fileID: 1267302984721423346, guid: 932e671dea252f54693c70701112b390, type: 3}
   floorTiles:
   - {fileID: 8547191752457052907, guid: 183adf2ab0c5cea42bd621e1a44342d3, type: 3}
   wallTiles:
