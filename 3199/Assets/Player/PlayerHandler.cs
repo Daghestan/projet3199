@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class PlayerHandler : MonoBehaviour, HumanoidInterface
 {
@@ -156,4 +157,12 @@ public class PlayerHandler : MonoBehaviour, HumanoidInterface
             ammo = 0;
         }
     }
+
+            private void OnTriggerEnter2D (Collider2D other)
+        {
+            if(other.tag == "Exit")
+            {
+                SceneManager.LoadScene ("Game");
+            }
+        }
 }

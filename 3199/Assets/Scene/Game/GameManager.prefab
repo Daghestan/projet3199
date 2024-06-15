@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6756092378693211089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8385564779608622738}
+  - component: {fileID: 5162402970939210776}
+  - component: {fileID: 1045552028650894995}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8385564779608622738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6756092378693211089}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.997207, y: 4.256002, z: -107.11896}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5162402970939210776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6756092378693211089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c868b2828039cc479b6c32b47c9d35b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columns: 8
+  rows: 8
+  wallCount:
+    minimum: 5
+    maximum: 12
+  exit: {fileID: 6304203615145671138, guid: 4450ace90fe886e42a9c74af1a16c502, type: 3}
+  enemy:
+  - {fileID: 5076590502907468627, guid: 7229973347b6eda4a8f807d6ef6c1178, type: 3}
+  - {fileID: 5965918630125379287, guid: 6d50bb206ab0b694bbe36b176d19275e, type: 3}
+  - {fileID: 5965918630125379287, guid: 6d50bb206ab0b694bbe36b176d19275e, type: 3}
+  floorTiles:
+  - {fileID: 8547191752457052907, guid: 183adf2ab0c5cea42bd621e1a44342d3, type: 3}
+  wallTiles:
+  - {fileID: 9108956148695681089, guid: 95e3384a109ebaa43a932e67ecff138a, type: 3}
+  outerWallTiles:
+  - {fileID: 98597427309525584, guid: fa4e2688268b25a4b828120e9d127fe4, type: 3}
+--- !u!114 &1045552028650894995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6756092378693211089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d98f1ea4c374b54a84de6f9621e6d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
