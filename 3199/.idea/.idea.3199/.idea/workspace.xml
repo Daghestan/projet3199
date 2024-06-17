@@ -6,26 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="2a6d69f2-7197-4b24-9256-a8a6afe13c73" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.3199/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3199/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AI/AiScript/AI_Controller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AI/AiScript/AI_Controller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AI/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AI/Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Canva/HealthBar-BillBoard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Canva/HealthBar-BillBoard.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Player/PlayerHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/PlayerHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scene/BaseScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/BaseScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scriots.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scriots/ConnectToServer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scriots/ConnectToServer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scriots/CreateAndJoinRoom.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scriots/CreateAndJoinRoom.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scriots/HumanoidInterface.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scriots/HumanoidInterface.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scriots/PanelOpener.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scriots/PanelOpener.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scriots/Redirect.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scriots/Redirect.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scriots/SpawnPlayers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/scriots/SpawnPlayers.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/BoardManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game/BoardManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/Exit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game/Exit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/Exit.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game/Exit.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/Floor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game/Floor.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/Floor.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game/Floor.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/GameManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game/GameManager.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/OuterWall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game/OuterWall.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/OuterWall.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game/OuterWall.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/Walkable.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/Walkable.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/Wall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game/Wall.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/Wall.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game/Wall.prefab.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +33,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Player/Movement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/NavMeshPlus-master/NavMeshTriggerer.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -93,10 +90,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="8832">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="8832" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -123,6 +120,9 @@
       <workItem from="1714426375089" duration="548000" />
       <workItem from="1714907160526" duration="13772000" />
       <workItem from="1715029442595" duration="2187000" />
+      <workItem from="1718044390263" duration="2028000" />
+      <workItem from="1718122372593" duration="13555000" />
+      <workItem from="1718542388472" duration="5362000" />
     </task>
     <servers />
   </component>

@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-using UnityEngine.SceneManagement;
 
 public class PlayerHandler : MonoBehaviour, HumanoidInterface
 {
     PhotonView view;
-    public Rigidbody2D body;
+    private Rigidbody2D body;
     public int speed = 5;
     public int sprintMultiplier = 2;
-    public SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer;
 
     public GameObject bulletPrefab; // Modèle de balle à cloner
-    public Transform bulletSpawnPoint; // Point de départ des balles
+    private Transform bulletSpawnPoint; // Point de départ des balles
+    private Transform bulletTargetPoint; // Point de départ des balles
     public int bulletPerShot = 1;
     public int clipAmmo = 10; // Munitions actuelles dans le chargeur
     public int clipSize = 10; // Taille maximale du chargeur
@@ -24,19 +24,44 @@ public class PlayerHandler : MonoBehaviour, HumanoidInterface
     public float recoil = 2f; // Variance angulaire due au recul, en degrés
     private float lastFireTime;
 
-     public int MaxHealth = 100;
-     public int health = 100;
+    public int MaxHealth = 100;
+    public int health = 100;
+
+    private Camera playerCamera;
+    [Range(5f, 15f)]
+    [SerializeField] public float playerCameraRange;
+    
+    private Vector2 movementDirection; // Nouvelle variable pour stocker la direction du mouvement
+    private Vector3 mousePosition; // Nouvelle variable pour stocker la position de la souris
 
     public void Start()
     {
         view = GetComponent<PhotonView>();
         lastFireTime = -fireRate;
+
+        body = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        bulletSpawnPoint = transform.Find("Aim");
+        bulletTargetPoint = transform.Find("Target");
+        bulletTargetPoint.SetParent(transform.parent);
+        
+        if (view.IsMine)
+        {
+            // Instanciez la caméra pour le joueur localement
+            GameObject cameraObject = new GameObject("PlayerCamera");
+            Camera cameraComponent = cameraObject.AddComponent<Camera>();
+            CameraFollow cameraFollow = cameraObject.AddComponent<CameraFollow>();
+            cameraFollow.target = transform;
+            cameraFollow.offset = new Vector3(0, 0, -playerCameraRange);
+            playerCamera = cameraComponent;
+        }
     }
+
     public void Died()
     {
         speed = 0;
     }
-    
+
     public void TakeDamage(int damages)
     {
         health -= damages;
@@ -44,16 +69,16 @@ public class PlayerHandler : MonoBehaviour, HumanoidInterface
         {
             health = 0;
             Died();
-            SceneManager.LoadScene ("Menu");
-
         }
-        else 
-                {
-                    // Faites trembler le sprite
-                    StartCoroutine(ShakeSprite()); 
-                }
+        else
+        {
+            // Faites trembler le sprite
+            StartCoroutine(ShakeSprite());
+        }
     }
+
     private bool canShake = true;
+
     IEnumerator ShakeSprite()
     {
         if (canShake)
@@ -64,42 +89,44 @@ public class PlayerHandler : MonoBehaviour, HumanoidInterface
             float shakeMagnitude = 0.1f;
             float elapsedTime = 0f;
             float coolDownDuration = .2f;
-    
+
             while (elapsedTime < shakeDuration)
             {
                 float x = Random.Range(-1f, 1f) * shakeMagnitude;
                 float y = Random.Range(-1f, 1f) * shakeMagnitude;
-    
+
                 // Ajoutez les tremblements à la position originale
                 spriteRenderer.transform.position = originalPosition + new Vector3(x, y, 0f);
-    
+
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
-    
+
             // Réinitialisez la position à la fin du tremblement
             spriteRenderer.transform.position = originalPosition;
-    
+
             // Pause pendant la période de cooldown
             yield return new WaitForSeconds(coolDownDuration);
-    
+
             canShake = true;
         }
     }
-
-
 
     void Update()
     {
         if (view.IsMine)
         {
+            mousePosition = Input.mousePosition;//playerCamera.ScreenToWorldPoint(Input.mousePosition);
+            bulletTargetPoint.position = ((Vector2)mousePosition - (Vector2)transform.position); // Mettez à jour la position du point de cible
             HandleMovement();
-             if (Input.GetButton("Fire1"))
-                {
-                    TryFireBullets();
-                }
+            
+            if (Input.GetMouseButtonDown(0))
+            {
+                TryFireBullets();
+            }
         }
     }
+    
 
     void HandleMovement()
     {
@@ -109,7 +136,20 @@ public class PlayerHandler : MonoBehaviour, HumanoidInterface
         int currentSpeed = sprinting ? speed * sprintMultiplier : speed;
         Vector2 movement = new Vector2(horizontalInput, verticalInput).normalized;
         body.velocity = movement * currentSpeed;
-        spriteRenderer.flipX = horizontalInput < 0;
+
+        // Stockez la direction du mouvement
+        if (movement.magnitude > 0)
+        {
+            movementDirection = movement;
+        }
+        if (horizontalInput < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        if (horizontalInput > 0)
+        {
+            spriteRenderer.flipX = false;
+        }
     }
 
     void TryFireBullets()
@@ -123,13 +163,13 @@ public class PlayerHandler : MonoBehaviour, HumanoidInterface
 
     void FireBullets()
     {
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 fireDirection = (mousePosition - (Vector2)bulletSpawnPoint.position).normalized;
+        // Utilisez la position de la souris pour tirer
+        Vector2 fireDirection = ((Vector2)bulletTargetPoint.position - (Vector2)bulletSpawnPoint.position).normalized;
 
         for (int i = 0; i < bulletPerShot; i++)
         {
             Vector2 modifiedDirection = Quaternion.Euler(0, 0, Random.Range(-recoil, recoil)) * fireDirection;
-            GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, Quaternion.identity);
+            GameObject bullet = Instantiate(bulletPrefab, bulletSpawnPoint.position, bulletSpawnPoint.rotation);
             bullet.GetComponent<Rigidbody2D>().velocity = modifiedDirection * 20f; // Ajustez la vitesse de la balle si nécessaire
             Bullet bulletScript = bullet.GetComponent<Bullet>();
             if (bulletScript != null)
@@ -159,12 +199,4 @@ public class PlayerHandler : MonoBehaviour, HumanoidInterface
             ammo = 0;
         }
     }
-
-            private void OnTriggerEnter2D (Collider2D other)
-        {
-            if(other.tag == "Exit")
-            {
-                SceneManager.LoadScene ("Game");
-            }
-        }
 }

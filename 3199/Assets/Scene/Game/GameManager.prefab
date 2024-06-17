@@ -44,22 +44,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c868b2828039cc479b6c32b47c9d35b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  columns: 8
-  rows: 8
+  columns: 15
+  rows: 15
   wallCount:
     minimum: 5
     maximum: 12
-  exit: {fileID: 6304203615145671138, guid: 4450ace90fe886e42a9c74af1a16c502, type: 3}
+  exit: {fileID: 8039495973950182089, guid: 4450ace90fe886e42a9c74af1a16c502, type: 3}
   enemy:
   - {fileID: 5076590502907468627, guid: 7229973347b6eda4a8f807d6ef6c1178, type: 3}
   - {fileID: 1267302984721423346, guid: 932e671dea252f54693c70701112b390, type: 3}
   - {fileID: 1267302984721423346, guid: 932e671dea252f54693c70701112b390, type: 3}
   floorTiles:
-  - {fileID: 8547191752457052907, guid: 183adf2ab0c5cea42bd621e1a44342d3, type: 3}
+  - {fileID: 2405680843193867192, guid: 183adf2ab0c5cea42bd621e1a44342d3, type: 3}
   wallTiles:
-  - {fileID: 9108956148695681089, guid: 95e3384a109ebaa43a932e67ecff138a, type: 3}
+  - {fileID: 3937990202098319790, guid: 95e3384a109ebaa43a932e67ecff138a, type: 3}
   outerWallTiles:
-  - {fileID: 98597427309525584, guid: fa4e2688268b25a4b828120e9d127fe4, type: 3}
+  - {fileID: 3521786830486255074, guid: fa4e2688268b25a4b828120e9d127fe4, type: 3}
 --- !u!114 &1045552028650894995
 MonoBehaviour:
   m_ObjectHideFlags: 0
