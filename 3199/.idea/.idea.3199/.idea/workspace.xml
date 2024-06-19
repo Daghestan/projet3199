@@ -6,23 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="2a6d69f2-7197-4b24-9256-a8a6afe13c73" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.3199/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.3199/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Canva/HealthBar-BillBoard.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Canva/HealthBar-BillBoard.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Player/PlayerHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/PlayerHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scene/BaseScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/BaseScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/BoardManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game/BoardManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/EliteEnemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game/EliteEnemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game/Enemy.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/Exit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game/Exit.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/Exit.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game/Exit.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/Floor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game/Floor.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/Floor.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game/Floor.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/GameManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game/GameManager.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/OuterWall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game/OuterWall.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/OuterWall.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game/OuterWall.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/Walkable.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/Walkable.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/Wall.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game/Wall.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scene/Game/Wall.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scene/Game/Wall.prefab.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +113,7 @@
       <workItem from="1715029442595" duration="2187000" />
       <workItem from="1718044390263" duration="2028000" />
       <workItem from="1718122372593" duration="13555000" />
-      <workItem from="1718542388472" duration="5362000" />
+      <workItem from="1718542388472" duration="9188000" />
     </task>
     <servers />
   </component>

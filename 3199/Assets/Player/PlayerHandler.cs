@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using System.Linq; // For easier LINQ usage
+using UnityEngine.SceneManagement;
 
 public class PlayerHandler : MonoBehaviour, HumanoidInterface
 {
@@ -27,6 +29,7 @@ public class PlayerHandler : MonoBehaviour, HumanoidInterface
     public int MaxHealth = 100;
     public int health = 100;
 
+    public string TeleportedLevel = "Game";
     private Camera playerCamera;
     [Range(5f, 15f)]
     [SerializeField] public float playerCameraRange;
@@ -116,8 +119,7 @@ public class PlayerHandler : MonoBehaviour, HumanoidInterface
     {
         if (view.IsMine)
         {
-            mousePosition = Input.mousePosition;//playerCamera.ScreenToWorldPoint(Input.mousePosition);
-            bulletTargetPoint.position = ((Vector2)mousePosition - (Vector2)transform.position); // Mettez à jour la position du point de cible
+            FindAndSetTarget(); // Find the closest target and set the bulletTargetPoint position
             HandleMovement();
             
             if (Input.GetMouseButtonDown(0))
@@ -126,7 +128,30 @@ public class PlayerHandler : MonoBehaviour, HumanoidInterface
             }
         }
     }
-    
+
+    void FindAndSetTarget()
+    {
+        // Find the closest "Enemy" or "Boss"
+        GameObject closestTarget = null;
+        float closestDistance = Mathf.Infinity;
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("AI");
+
+        foreach (GameObject enemy in enemies)
+        {
+            float distance = Vector2.Distance(transform.position, enemy.transform.position);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestTarget = enemy;
+            }
+        }
+
+        if (closestTarget != null)
+        {
+            bulletTargetPoint.position = closestTarget.transform.position;
+        }
+    }
 
     void HandleMovement()
     {
@@ -199,4 +224,11 @@ public class PlayerHandler : MonoBehaviour, HumanoidInterface
             ammo = 0;
         }
     }
+    private void OnTriggerEnter2D(Collider2D other)
+        {
+              if (other.tag == "Exit")
+                 {
+                        SceneManager.LoadScene(TeleportedLevel);
+                 }
+         }
 }
