@@ -9,7 +9,7 @@ namespace Completed
 
 {
 
-    public class BoardManager : MonoBehaviour
+    public class BossBoardManager : MonoBehaviour
     {
         [Serializable]
         public class Count
@@ -26,10 +26,9 @@ namespace Completed
         }
 
 
-        public int columns = 8;            
-        public int rows = 8;                
+        public int columns = 16;            
+        public int rows = 16;                
         public Count wallCount = new Count (5, 12);
-        public GameObject exit;
         public GameObject[] enemy;
         public GameObject[] floorTiles;     
         public GameObject[] wallTiles;      
@@ -43,9 +42,9 @@ namespace Completed
         {
             gridPositions.Clear ();
             
-            for(int x = -99; x < columns - 101; x++)
+            for(int x = -199; x < columns - 201; x++)
             {
-                for(int y = -99; y < rows -101; y++)
+                for(int y = -199; y < rows -201; y++)
                 {
                     gridPositions.Add (new Vector3(x, y, 0f));
                 }
@@ -57,13 +56,13 @@ namespace Completed
         {
             boardHolder = new GameObject ("Board").transform;
             
-            for(int x = -101; x < columns -99; x++)
+            for(int x = -201; x < columns -199; x++)
             {
-                for(int y = -101; y < rows + -99; y++)
+                for(int y = -201; y < rows + -199; y++)
                 {
                     GameObject toInstantiate = floorTiles[Random.Range (0,floorTiles.Length)];
                     
-                    if(x == -101 || x == columns - 100 || y == -101 || y == rows - 100)
+                    if(x == -201 || x == columns - 200 || y == -201 || y == rows - 200)
                         toInstantiate = outerWallTiles [Random.Range (0, outerWallTiles.Length)];
                     
                     GameObject instance = Instantiate (toInstantiate, new Vector3 (x, y, 0f), Quaternion.identity) as GameObject;
@@ -109,14 +108,6 @@ namespace Completed
 
             Instantiate(EnemyChoice, randomPosition, Quaternion.identity);
             
-             if (level%5==0)
-            {
-                randomPosition = RandomPosition();
-
-                EnemyChoice = enemy[Random.Range (0, enemy.Length)];
-
-                Instantiate(EnemyChoice, randomPosition, Quaternion.identity);
-            }
         }
         
         public void SetupScene (int level)
@@ -129,7 +120,6 @@ namespace Completed
 
             spawnEnemy (enemy, level);
 
-            Instantiate (exit, new Vector3 (columns -101, rows -101, 0f), Quaternion.identity);
         }
     }
 }

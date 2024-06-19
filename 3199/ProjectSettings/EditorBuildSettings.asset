@@ -53,4 +53,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/Game.unity
     guid: 1f943f778def7fc4cb4c1fe73db062d1
+  - enabled: 1
+    path: Assets/Scene/minigame/GameOver.unity
+    guid: 61a516faf65b57c41a5527984ec91d9d
+  - enabled: 1
+    path: Assets/Scene/Boss.unity
+    guid: 3eca202fb8e18664981c9edab2a82ebc
+  - enabled: 1
+    path: Assets/Scene/minigame/Victoire.unity
+    guid: fb133aeb100404c4e8409ec4e1b9857f
   m_configObjects: {}

@@ -8,6 +8,7 @@ TagManager:
   - Collision
   - Exit
   - Floor
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -50,4 +51,10 @@ TagManager:
     locked: 0
   - name: Item
     uniqueID: 2278020673
+    locked: 0
+  - name: Image
+    uniqueID: 4012148815
+    locked: 0
+  - name: Memory
+    uniqueID: 1588117667
     locked: 0

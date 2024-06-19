@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7538205296232494601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 801477904722694920}
+  - component: {fileID: 7989667389162976323}
+  - component: {fileID: 4369764951440492765}
+  m_Layer: 0
+  m_Name: BossGameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &801477904722694920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7538205296232494601}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -87.71855, y: -96.92249, z: -1.9621265}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7989667389162976323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7538205296232494601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15aeddaa316f71a43a3fa83325567a4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  columns: 16
+  rows: 16
+  wallCount:
+    minimum: 5
+    maximum: 12
+  enemy:
+  - {fileID: 7041473649268935956, guid: 2348ba27e6f43b042833a1aeae4153b6, type: 3}
+  floorTiles:
+  - {fileID: 2405680843193867192, guid: 183adf2ab0c5cea42bd621e1a44342d3, type: 3}
+  wallTiles:
+  - {fileID: 3937990202098319790, guid: 95e3384a109ebaa43a932e67ecff138a, type: 3}
+  outerWallTiles:
+  - {fileID: 3521786830486255074, guid: fa4e2688268b25a4b828120e9d127fe4, type: 3}
+--- !u!114 &4369764951440492765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7538205296232494601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284e025a2ceb6eb4ebc2d7efe607e537, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement; 
 
 public class AI_Controller : MonoBehaviour, HumanoidInterface
 {
@@ -50,6 +51,7 @@ public class AI_Controller : MonoBehaviour, HumanoidInterface
         
         
         Destroy(gameObject);
+        GameManager.instance.Kill ();
     }
     
     

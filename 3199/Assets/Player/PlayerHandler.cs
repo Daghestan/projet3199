@@ -25,6 +25,7 @@ public class PlayerHandler : MonoBehaviour, HumanoidInterface
     public float fireRate = 1f;
     public float recoil = 2f; // Variance angulaire due au recul, en degrés
     private float lastFireTime;
+    public int kill = 0;
 
     public int MaxHealth = 100;
     public int health = 100;
@@ -63,6 +64,8 @@ public class PlayerHandler : MonoBehaviour, HumanoidInterface
     public void Died()
     {
         speed = 0;
+        GameManager.instance.kill = 0;
+        SceneManager.LoadScene("GameOver");
     }
 
     public void TakeDamage(int damages)
@@ -228,7 +231,19 @@ public class PlayerHandler : MonoBehaviour, HumanoidInterface
         {
               if (other.tag == "Exit")
                  {
+                     if (kill<20)
+                     {
                         SceneManager.LoadScene(TeleportedLevel);
+                     }
+                     else
+                     {
+                         SceneManager.LoadScene("Boss");
+                     }
                  }
          }
+
+    public void Kill()
+    {
+        kill = kill+1;
+    }
 }

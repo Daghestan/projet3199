@@ -5,12 +5,11 @@ using Completed;
 using UnityEngine.SceneManagement;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class BossGameManager : MonoBehaviour
 {
-    public static GameManager instance = null;
-    private BoardManager boardScript;
-    private int level = 1;
-    public int kill = 0;
+    public static BossGameManager instance = null;
+    private BossBoardManager boardScript;
+    public int level = 1;
 
     void Awake()
     {
@@ -25,7 +24,7 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        boardScript = GetComponent<BoardManager>();
+        boardScript = GetComponent<BossBoardManager>();
  
         InitGame();
     }
@@ -46,14 +45,6 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void Kill()
-    {
-        kill += 1;
-        if (kill == 15)
-        {
-            SceneManager.LoadScene("Boss");
-        }
-    }
 
     void Update()
     {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BossAI_Controller : MonoBehaviour, HumanoidInterface
 {
@@ -54,6 +55,7 @@ public class BossAI_Controller : MonoBehaviour, HumanoidInterface
         wanderRadius = 0;
         targets.Clear();
         Destroy(gameObject);
+
     }
     
     public void TakeDamage(int damage) // imported from Humanoid
@@ -63,6 +65,8 @@ public class BossAI_Controller : MonoBehaviour, HumanoidInterface
         {
             health = 0;
             Died();
+            SceneManager.LoadScene("victoire");
+            GameManager.instance.kill = 0;
         }
         else 
         {
@@ -107,19 +111,27 @@ public class BossAI_Controller : MonoBehaviour, HumanoidInterface
     
     void Start()
     {
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        agent.updateRotation = false;
-        agent.updateUpAxis = false;
-        lastPosition = transform.position;
-        
-        canvaHolder = transform.Find("Canvas");
-        canvas = canvaHolder.GetComponent<Canvas>();
-        Transform textTransform = canvaHolder.Find("Text");
-        
-        dialog = textTransform.GetComponent<Text>();
+        // Create a temporary reference to the current scene.
+		Scene currentScene = SceneManager.GetActiveScene ();
 
-        // Start the dialog coroutine
-        StartCoroutine(ShowDialog());
+		// Retrieve the name of this scene.
+		string sceneName = currentScene.name;
+
+
+			agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+            agent.updateRotation = false;
+            agent.updateUpAxis = false;
+            lastPosition = transform.position;
+        
+            canvaHolder = transform.Find("Canvas");
+            canvas = canvaHolder.GetComponent<Canvas>();
+            Transform textTransform = canvaHolder.Find("Text");
+        
+            dialog = textTransform.GetComponent<Text>();
+
+            // Start the dialog coroutine
+            StartCoroutine(ShowDialog());
+
     }
 
     void Update()
@@ -138,6 +150,7 @@ public class BossAI_Controller : MonoBehaviour, HumanoidInterface
     
     IEnumerator ShowDialog()
     {
+
         foreach (string sentence in Chat)
         {
             dialog.text = ""; // Clear the dialog text
