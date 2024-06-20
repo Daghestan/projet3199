@@ -231,14 +231,8 @@ public class PlayerHandler : MonoBehaviour, HumanoidInterface
         {
               if (other.tag == "Exit")
                  {
-                     if (kill<20)
-                     {
-                        SceneManager.LoadScene(TeleportedLevel);
-                     }
-                     else
-                     {
-                         SceneManager.LoadScene("Boss");
-                     }
+                    SceneManager.LoadScene(TeleportedLevel);
+
                  }
          }
 
